@@ -10,7 +10,7 @@ BUILD_INFO=-ldflags "-X $(BUILD_INFO_IMPORT_PATH).Version=$(VERSION)"
 IMAGE_NAME=ghcr.io/nirmata/metrics-agent
 
 # Update this version every time a new image is supposed to be published
-IMAGE_VERSION=$(git rev-parse --short HEAD)
+IMAGE_VERSION=$(shell git describe --always --tags)
 
 COMP_REL_PATH=internal/components/components.go
 MOD_NAME=github.com/open-telemetry/opentelemetry-collector-contrib
