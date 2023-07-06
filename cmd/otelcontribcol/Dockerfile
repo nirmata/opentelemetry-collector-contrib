@@ -1,7 +1,7 @@
 FROM alpine:latest as prep
 RUN apk --update add ca-certificates
 
-ARG USER_UID=10001
+ARG USER_UID=65532:65532
 
 RUN mkdir -p /tmp
 
